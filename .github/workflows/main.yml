@@ -1,0 +1,34 @@
+name: Pushing to GitHub Pages
+
+on:
+push:
+branches:
+- main
+
+Permissions:
+contents: read
+pages: write
+id-token: write
+
+jobs:
+  deploy:
+    environment:
+
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+runs-on: ubuntu-latest
+
+steps:
+- name: Checkout Repository
+uses: ac*ons/checkout@v3
+
+- name: Setup Pages
+uses: ac*ons/configure-pages@v4
+- name: Upload Ar*fact
+uses: ac*ons/upload-pages-ar*fact@v3
+with:
+path: '.' 
+
+- name: Deploy to pages
+id: deployment
+uses: ac*ons/deploy-pages@v4
