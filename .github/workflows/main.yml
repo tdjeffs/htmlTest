@@ -20,11 +20,11 @@ runs-on: ubuntu-latest
 
 steps:
 - name: Checkout Repository
-uses: ac*ons/checkout@v3
+uses: actions/checkout@v3
 - name: Setup Pages
-uses: ac*ons/configure-pages@v4
-- name: Upload Ar*fact
-uses: ac*ons/upload-pages-ar*fact@v3
+uses: actions/configure-pages@v4
+- name: Upload Artifact
+uses: actions/upload-pages-artifact@v3
 with:
 path: '.' 
 
